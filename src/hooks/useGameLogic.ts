@@ -234,7 +234,7 @@ export function useGameLogic() {
         }, 350);
       }
 
-      // Handle bad circle capture
+      // Handle bad circle capture - regenerate same round
       if (capturedBad > 0) {
         setShakeScreen(true);
         setTimeout(() => setShakeScreen(false), 300);
@@ -244,16 +244,24 @@ export function useGameLogic() {
           const newHearts = h - 1;
           if (newHearts <= 0) {
             endGame();
+          } else {
+            // Regenerate circles for the same round after a brief delay
+            clearRespawnTimer();
+            setTimeout(() => {
+              if (gameStateRef.current === 'playing') {
+                spawnNewCircles();
+                startRespawnTimer();
+              }
+            }, 500);
           }
           return newHearts;
         });
+        return updatedCircles; // Exit early, don't check for round completion
       }
       
-      // Check round completion
+      // Check round completion (only if no bad circles were captured)
       if (capturedGood > 0) {
-        if (capturedBad === 0) {
-          sounds.playSuccess();
-        }
+        sounds.playSuccess();
         
         const remainingGood = updatedCircles.filter(c => c.type === 'good' && !c.captured).length;
         if (remainingGood === 0) {

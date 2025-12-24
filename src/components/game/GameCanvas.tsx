@@ -88,7 +88,8 @@ export function GameCanvas({
     <div
       ref={containerRef}
       className={cn(
-        "game-canvas w-full h-full cursor-crosshair",
+        "game-canvas cursor-crosshair",
+        "w-[80vmin] h-[80vmin]",
         shakeScreen && "animate-shake"
       )}
       onMouseDown={handleMouseDown}

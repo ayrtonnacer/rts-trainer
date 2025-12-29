@@ -42,19 +42,19 @@ export function GameOverScreen({
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8" style={{ backgroundColor: '#001a66' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-background">
       <div className="text-center w-full max-w-md">
         {/* Game Over */}
-        <div className="text-4xl font-bold mb-8" style={{ color: '#ffffff', fontFamily: 'monospace', letterSpacing: '3px' }}>
+        <div className="text-6xl md:text-7xl font-bold mb-8 text-foreground font-display">
           GAME OVER
         </div>
         
         {/* Round Reached */}
-        <div className="mb-8">
-          <div className="text-sm mb-4" style={{ color: '#ffffff', fontFamily: 'monospace', letterSpacing: '2px', opacity: 0.8 }}>
+        <div className="mb-12">
+          <div className="text-xs md:text-sm mb-4 text-foreground/80 font-display tracking-wider">
             ROUND REACHED
           </div>
-          <div className="text-8xl font-bold" style={{ color: '#ffffff', fontFamily: 'monospace' }}>
+          <div className="text-8xl md:text-9xl font-bold text-foreground font-display">
             {round}
           </div>
         </div>
@@ -62,65 +62,23 @@ export function GameOverScreen({
         {/* Actions */}
         <div className="flex flex-col gap-4 mt-12">
           <button 
-            onClick={handleShare} 
-            className="px-8 py-4 text-lg font-bold transition-all duration-200"
-            style={{ 
-              backgroundColor: '#ffffff', 
-              color: '#001a66',
-              border: '2px solid #ffffff',
-              fontFamily: 'monospace',
-              letterSpacing: '2px',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f0f0f0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#ffffff';
-            }}
+            onClick={handleShare}
+            className="game-button px-8 py-4 text-sm md:text-base font-display flex items-center justify-center gap-2 font-bold"
           >
-            <Share2 className="inline w-5 h-5 mr-2" />
+            <Share2 className="w-5 h-5" />
             SHARE WITH FRIENDS
           </button>
           
           <button 
-            onClick={onRetry} 
-            className="px-8 py-4 text-lg font-bold transition-all duration-200"
-            style={{ 
-              backgroundColor: '#ffffff', 
-              color: '#001a66',
-              border: '2px solid #ffffff',
-              fontFamily: 'monospace',
-              letterSpacing: '2px',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f0f0f0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#ffffff';
-            }}
+            onClick={onRetry}
+            className="game-button px-8 py-4 text-sm md:text-base font-display font-bold"
           >
             RETRY
           </button>
           
           <button 
-            onClick={onMenu} 
-            className="px-8 py-4 text-lg font-bold transition-all duration-200"
-            style={{ 
-              backgroundColor: '#001a66', 
-              color: '#ffffff',
-              border: '2px solid #ffffff',
-              fontFamily: 'monospace',
-              letterSpacing: '2px',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#003399';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#001a66';
-            }}
+            onClick={onMenu}
+            className="game-button-secondary px-8 py-4 text-sm md:text-base font-display font-bold"
           >
             MENU
           </button>

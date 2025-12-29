@@ -3,6 +3,7 @@ import { toast } from 'sonner';
 
 interface GameOverScreenProps {
   round: number;
+  bestRound: number;
   onRetry: () => void;
   onMenu: () => void;
 }

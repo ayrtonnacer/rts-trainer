@@ -5,8 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-        base: "/rts-tactical-box/",
-  
+ base: "/tactical-box/",  
   server: {
     host: "::",
     port: 8080,

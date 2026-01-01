@@ -38,7 +38,7 @@ export function useBackgroundMusic() {
 
   const [isMusicEnabled, setIsMusicEnabled] = useState(() => {
     const saved = localStorage.getItem('musicEnabled');
-    return saved !== null ? saved === 'true' : true;
+    return saved !== null ? saved === 'true' : false;
   });
 
   useEffect(() => {

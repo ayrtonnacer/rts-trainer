@@ -5,11 +5,8 @@ interface GameHUDProps {
   hearts: number;
   timer: number;
   round: number;
-  isMusicEnabled: boolean;
-  onToggleMusic: () => void;
-}
 
-export function GameHUD({ hearts, timer, round, isMusicEnabled, onToggleMusic }: GameHUDProps) {
+export function GameHUD({ hearts, timer, round, ): GameHUDProps) {
   const isLowTime = timer <= 10;
 
   const formatTime = (seconds: number) => {
@@ -51,15 +48,6 @@ export function GameHUD({ hearts, timer, round, isMusicEnabled, onToggleMusic }:
         )}>
           {formatTime(timer)}
         </div>
-        <button
-          onClick={onToggleMusic}
-          className="pointer-events-auto p-1 text-foreground/60 hover:text-foreground transition-colors"
-          title={isMusicEnabled ? 'Disable music' : 'Enable music'}
-        >
-          {isMusicEnabled ? (
-            <Volume2 className="w-5 h-5 md:w-6 md:h-6" />
-          ) : (
-            <VolumeX className="w-5 h-5 md:w-6 md:h-6" />
           )}
         </button>
       </div>

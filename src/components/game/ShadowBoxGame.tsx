@@ -4,6 +4,7 @@ import { GameCanvas } from './GameCanvas';
 import { GameHUD } from './GameHUD';
 import { MenuScreen } from './MenuScreen';
 import { GameOverScreen } from './GameOverScreen';
+import { SpotifyPlayer } from '../SpotifyPlayer';
 
 export function ShadowBoxGame() {
   const {
@@ -68,6 +69,7 @@ export function ShadowBoxGame() {
         onSelectionComplete={handleSelectionComplete}
         shakeScreen={shakeScreen}
         onResize={updateCanvasSize}
+              <SpotifyPlayer />
       />
     </div>
   );

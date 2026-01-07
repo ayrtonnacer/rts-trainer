@@ -18,7 +18,7 @@ export function SpotifyPlayer() {
           width: '100%',
           height: '152px',
         }}
-        src="https://open.spotify.com/embed/track/6AQbmUe0Qwf5PZnt4HmTXv?utm_source=generator&theme=0"
+        src="https://open.spotify.com/embed/track/7rRnnIFQd5uoGFPEkUZgcq?utm_source=generator&theme=0"
         frameBorder="0"
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
